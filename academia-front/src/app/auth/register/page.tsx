@@ -73,7 +73,7 @@ export default function RegisterPage() {
             <div className="mb-6">
               <Link href="/" className="flex items-center gap-2">
                 <Image
-                  src="/placeholder.svg?height=40&width=40"
+                  src="/images/logo.png?height=40&width=40"
                   width={40}
                   height={40}
                   alt="Logo"
@@ -300,7 +300,7 @@ export default function RegisterPage() {
           <div className="hidden md:block">
             <div className="relative h-full w-full overflow-hidden rounded-xl">
               <Image
-                src="/placeholder.svg?height=600&width=500"
+                src="/images/login.jpg?height=600&width=500"
                 fill
                 alt="Estudiante aprendiendo técnicas de belleza"
                 className="object-cover"

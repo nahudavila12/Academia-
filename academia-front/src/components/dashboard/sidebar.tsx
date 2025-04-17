@@ -33,11 +33,16 @@ interface SidebarLink {
   role: "all" | "student" | "instructor" | "admin"
 }
 
-export default function DashboardSidebar() {
+interface DashboardSidebarProps {
+  isOpen: boolean
+  toggleSidebar: () => void
+}
+
+export default function DashboardSidebar({ isOpen, toggleSidebar }: DashboardSidebarProps) {
   const pathname = usePathname()
   const isMobile = useMobile()
-  const [isOpen, setIsOpen] = useState(!isMobile)
   const [userRole, setUserRole] = useState<"student" | "instructor" | "admin">("student")
+  const [sidebarOpen, setSidebarOpen] = useState(isOpen)
 
   // Simulación: cambiar entre roles para demostración
   const toggleRole = () => {
@@ -47,7 +52,7 @@ export default function DashboardSidebar() {
   }
 
   useEffect(() => {
-    setIsOpen(!isMobile)
+    setSidebarOpen(!isMobile)
   }, [isMobile])
 
   const links: SidebarLink[] = [
@@ -74,17 +79,13 @@ export default function DashboardSidebar() {
 
   const filteredLinks = links.filter((link) => link.role === userRole || link.role === "all")
 
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen)
-  }
-
-  if (!isOpen) {
+  if (!sidebarOpen) {
     return (
       <div className="fixed inset-y-0 left-0 z-50 w-16 border-r border-[#F3D9E2] bg-white">
         <div className="flex h-16 items-center justify-center border-b border-[#F3D9E2]">
           <Link href="/">
             <Image
-              src="/placeholder.svg?height=40&width=40"
+              src="/images/logo.png?height=40&width=40"
               width={40}
               height={40}
               alt="Logo"
@@ -116,15 +117,6 @@ export default function DashboardSidebar() {
             <span className="sr-only">Cambiar rol (demo)</span>
           </Button>
         </nav>
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={toggleSidebar}
-          className="absolute -right-4 top-20 flex h-8 w-8 items-center justify-center rounded-full border border-[#F3D9E2] bg-white text-[#8E3A59] hover:bg-[#F3D9E2]"
-        >
-          <ChevronRight className="h-4 w-4" />
-          <span className="sr-only">Expandir menú</span>
-        </Button>
       </div>
     )
   }
@@ -133,14 +125,14 @@ export default function DashboardSidebar() {
     <div className="fixed inset-y-0 left-0 z-50 w-64 border-r border-[#F3D9E2] bg-white">
       <div className="flex h-16 items-center justify-between border-b border-[#F3D9E2] px-4">
         <Link href="/" className="flex items-center gap-2">
-          <Image src="/placeholder.svg?height=40&width=40" width={40} height={40} alt="Logo" className="rounded-full" />
+          <Image src="/images/logo.png?height=40&width=40" width={40} height={40} alt="Logo" className="rounded-full" />
           <span className="font-serif text-xl font-bold text-[#8E3A59]">BeautyAcademy</span>
         </Link>
       </div>
       <div className="flex flex-col gap-6 p-4">
         <div className="flex items-center gap-3">
           <Image
-            src="/placeholder.svg?height=40&width=40"
+            src="/images/perfil.jpg?height=40&width=40"
             width={40}
             height={40}
             alt="Avatar"
@@ -191,15 +183,6 @@ export default function DashboardSidebar() {
           </Link>
         </div>
       </div>
-      <Button
-        variant="ghost"
-        size="icon"
-        onClick={toggleSidebar}
-        className="absolute -right-4 top-20 flex h-8 w-8 items-center justify-center rounded-full border border-[#F3D9E2] bg-white text-[#8E3A59] hover:bg-[#F3D9E2]"
-      >
-        <ChevronLeft className="h-4 w-4" />
-        <span className="sr-only">Colapsar menú</span>
-      </Button>
     </div>
   )
 }

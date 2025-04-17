@@ -17,19 +17,18 @@ import {
 import { Input } from "@/components/ui/input"
 import { useMobile } from "@/hooks/use-mobile"
 
-export default function DashboardHeader() {
+interface DashboardHeaderProps {
+  toggleSidebar: () => void
+}
+
+export default function DashboardHeader({ toggleSidebar }: DashboardHeaderProps) {
   const isMobile = useMobile()
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b border-[#F3D9E2] bg-white px-4 md:px-6">
       {isMobile && (
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={() => setShowMobileMenu(!showMobileMenu)}
-          className="mr-2 md:hidden"
-        >
+        <Button variant="ghost" size="icon" onClick={toggleSidebar} className="mr-2 md:hidden">
           <Menu className="h-5 w-5 text-[#8E3A59]" />
           <span className="sr-only">Toggle menu</span>
         </Button>
@@ -63,7 +62,7 @@ export default function DashboardHeader() {
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-8 w-8 rounded-full">
               <Image
-                src="/placeholder.svg?height=32&width=32"
+                src="/images/perfil.jpg?height=32&width=32"
                 width={32}
                 height={32}
                 className="rounded-full"
