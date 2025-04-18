@@ -289,7 +289,15 @@ export default function AdminAnalyticsPage() {
   )
 }
 
-function MetricCard({ title, value, change, trend, description }) {
+interface MetricCardProps {
+  title: string;
+  value: string;
+  change: string;
+  trend: "up" | "down" | "neutral";
+  description: string;
+}
+
+function MetricCard({ title, value, change, trend, description }: MetricCardProps) {
   return (
     <Card className="border-[#F3D9E2]">
       <CardHeader className="pb-2">

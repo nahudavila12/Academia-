@@ -1,34 +1,30 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import ChatBot from "@/components/chat-virutal/chat-virtual"
+import LiveSupport from "@/components/live-support/live-support"
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "BeautyAcademy",
-  description: "Transformando vidas a través de la belleza y el empoderamiento femenino.",
-};
+  title: "Beauty Academy - Plataforma Educativa de Belleza",
+  description:
+    "Aprende las últimas técnicas y tendencias en maquillaje, peluquería y estética con los mejores profesionales.",
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
+    <html lang="es">
+      <body className={inter.className}>
+          {children}
+          <ChatBot />
+          <LiveSupport />
       </body>
     </html>
-  );
+  )
 }

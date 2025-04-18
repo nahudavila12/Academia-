@@ -89,7 +89,7 @@ export default function StudentDashboard() {
                     {course.completedLessons}/{course.totalLessons} lecciones
                   </span>
                 </div>
-                <Progress value={course.progress} className="h-2 bg-[#F3D9E2]" indicatorClassName="bg-[#8E3A59]" />
+                <Progress value={course.progress} className="h-2 bg-[#F3D9E2] [&>div]:bg-[#8E3A59]" />
                 <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
                   <Clock className="h-4 w-4" />
                   <span>Última actividad: {course.lastActivity}</span>
@@ -176,15 +176,17 @@ export default function StudentDashboard() {
           {materials.map((material, index) => (
             <Card key={index} className="overflow-hidden border-[#F3D9E2]">
               <div className="relative aspect-[4/3]">
-                <Image src={material.image || "/placeholder.svg"} alt={material.title} fill className="object-cover" />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/40 opacity-0 transition-opacity hover:opacity-100">
-                  <Button className="bg-white text-[#8E3A59] hover:bg-[#F3D9E2]">
-                    {material.type === "video" ? "Ver video" : "Descargar"}
-                  </Button>
-                </div>
-                <div className="absolute top-2 right-2">
-                  <Badge className="bg-[#8E3A59]">{material.type}</Badge>
-                </div>
+                {material.type === "video" ? (
+                  <iframe
+                    src={(material.src ?? "").replace("shorts/", "embed/").split("?")[0]}
+                    title={material.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                ) : (
+                  <Image src={material.image || "/placeholder.svg"} alt={material.title} fill className="object-cover" />
+                )}
               </div>
               <CardContent className="p-3">
                 <h3 className="line-clamp-1 font-medium">{material.title}</h3>
@@ -218,7 +220,7 @@ const courses = [
   {
     title: "Maquillaje Profesional Avanzado",
     instructor: "Laura Martínez",
-    image: "/placeholder.svg?height=180&width=320",
+    image: "/images/maquillajepro.jpg?height=180&width=320",
     progress: 65,
     completedLessons: 13,
     totalLessons: 20,
@@ -228,7 +230,7 @@ const courses = [
   {
     title: "Estilismo y Asesoría de Imagen",
     instructor: "Carolina Gómez",
-    image: "/placeholder.svg?height=180&width=320",
+    image: "/images/estilismo.jpg?height=180&width=320",
     progress: 30,
     completedLessons: 6,
     totalLessons: 20,
@@ -238,7 +240,7 @@ const courses = [
   {
     title: "Técnicas de Nail Art",
     instructor: "Sofía López",
-    image: "/placeholder.svg?height=180&width=320",
+    image: "/images/nails.jpg?height=180&width=320",
     progress: 45,
     completedLessons: 9,
     totalLessons: 20,
@@ -301,25 +303,25 @@ const announcements = [
 const materials = [
   {
     title: "Tutorial: Base perfecta para piel grasa",
-    image: "/placeholder.svg?height=150&width=200",
+    src: "https://youtube.com/shorts/8VuWuCoxVeA?si=2YJPUt85lkgI1M9-?height=150&width=200",
     type: "video",
     course: "Maquillaje Profesional",
   },
   {
     title: "Guía de colorimetría personal",
-    image: "/placeholder.svg?height=150&width=200",
+    image: "/images/color.jpg?height=150&width=200",
     type: "pdf",
     course: "Estilismo y Asesoría de Imagen",
   },
   {
     title: "Técnicas de degradado para uñas",
-    image: "/placeholder.svg?height=150&width=200",
+    src: "https://youtube.com/shorts/ZIkDbAiREdg?si=XM2clNOXmyLyAZuE?height=150&width=200",
     type: "video",
     course: "Nail Art Profesional",
   },
   {
     title: "Plantillas de diseño para maquillaje",
-    image: "/placeholder.svg?height=150&width=200",
+    image: "/images/maquillaje.jpg?height=150&width=200",
     type: "pdf",
     course: "Maquillaje Profesional",
   },

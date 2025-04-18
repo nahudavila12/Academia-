@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Bell, MessageSquare, Search, Menu } from "lucide-react"
+import { MessageSquare, Search, Menu } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Input } from "@/components/ui/input"
 import { useMobile } from "@/hooks/use-mobile"
+import NotificationPanel from "../notificacion-panel/notificacion-panel"
 
 interface DashboardHeaderProps {
   toggleSidebar: () => void
@@ -46,11 +47,7 @@ export default function DashboardHeader({ toggleSidebar }: DashboardHeaderProps)
       </div>
 
       <div className="flex items-center gap-2">
-        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-[#8E3A59]">
-          <Bell className="h-5 w-5" />
-          <span className="sr-only">Notificaciones</span>
-          <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-[#8E3A59]"></span>
-        </Button>
+        <NotificationPanel />
 
         <Button variant="ghost" size="icon" className="text-gray-500 hover:text-[#8E3A59]">
           <MessageSquare className="h-5 w-5" />
@@ -58,11 +55,33 @@ export default function DashboardHeader({ toggleSidebar }: DashboardHeaderProps)
           <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-[#8E3A59]"></span>
         </Button>
 
+        <Link href="/dashboard/student/focus" className="text-gray-500 hover:text-[#8E3A59]">
+          <Button variant="ghost" size="sm">
+            Modo Enfoque
+          </Button>
+        </Link>
+
+        <Link href="/dashboard/student/progress" className="text-gray-500 hover:text-[#8E3A59]">
+          <Button variant="ghost" size="sm">
+            Asistente de Progreso
+          </Button>
+        </Link>
+        <Link href="/dashboard/student/gamnification" className="text-gray-500 hover:text-[#8E3A59]">
+          <Button variant="ghost" size="sm">
+            Gamificacion
+          </Button>
+        </Link>
+        <Link href="/dashboard/student/accesibilty" className="text-gray-500 hover:text-[#8E3A59]">
+          <Button variant="ghost" size="sm">
+            Accesibilidad
+          </Button>
+        </Link>
+
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button variant="ghost" className="relative h-8 w-8 rounded-full">
               <Image
-                src="/images/perfil.jpg?height=32&width=32"
+                src="/placeholder.svg?height=32&width=32"
                 width={32}
                 height={32}
                 className="rounded-full"
