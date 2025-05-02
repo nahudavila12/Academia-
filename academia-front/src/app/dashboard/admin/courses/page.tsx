@@ -312,7 +312,6 @@ export default function AdminCoursesPage() {
                   <Progress
                     value={course.completion}
                     className="h-2 flex-1 bg-[#F3D9E2]"
-                    indicatorClassName="bg-[#8E3A59]"
                   />
                   <span className="text-xs font-medium">{course.completion}%</span>
                 </div>

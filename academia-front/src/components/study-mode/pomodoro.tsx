@@ -4,7 +4,6 @@ import { useState, useEffect, useRef } from "react"
 import { Play, Pause, RotateCcw, Bell, BellOff, Coffee, Brain } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -306,15 +305,7 @@ export default function FocusTimer() {
                       <label className="text-sm text-gray-500">Volumen</label>
                       <span className="text-xs text-gray-500">{volume}%</span>
                     </div>
-                    <Slider
-                      value={[volume]}
-                      min={0}
-                      max={100}
-                      step={1}
-                      onValueChange={(value: number[]) => setVolume(value[0])}
-                      disabled={!soundEnabled}
-                      className="data-[disabled]:opacity-50"
-                    />
+                    
                   </div>
                 </div>
               </CardContent>

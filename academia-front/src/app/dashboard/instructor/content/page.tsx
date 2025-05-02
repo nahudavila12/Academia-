@@ -224,7 +224,19 @@ export default function InstructorContentPage() {
   )
 }
 
-function ContentCard({ content }) {
+interface Content {
+  title: string;
+  thumbnail: string;
+  type: "video" | "document" | "pdf" | "quiz";
+  course: string;
+  views: number;
+  duration?: string;
+  pages?: number;
+  questions?: number;
+  status: "published" | "draft";
+}
+
+function ContentCard({ content }: { content: Content }) {
   return (
     <Card className="overflow-hidden border-[#F3D9E2]">
       <div className="relative aspect-video">
@@ -324,7 +336,7 @@ function ContentCard({ content }) {
   )
 }
 
-const contents = [
+const contents: Content[] = [
   {
     title: "Tutorial: Base perfecta para piel grasa",
     thumbnail: "/placeholder.svg?height=180&width=320",

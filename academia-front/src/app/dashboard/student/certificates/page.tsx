@@ -76,14 +76,12 @@ export default function CertificatesPage() {
                   <Button
                     variant="outline"
                     className="flex-1 border-[#8E3A59] text-[#8E3A59] hover:bg-[#F3D9E2]"
-                    leftIcon={<Download className="mr-2 h-4 w-4" />}
                   >
                     Descargar
                   </Button>
                   <Button
                     variant="outline"
                     className="flex-1 border-[#8E3A59] text-[#8E3A59] hover:bg-[#F3D9E2]"
-                    leftIcon={<Share className="mr-2 h-4 w-4" />}
                   >
                     Compartir
                   </Button>
@@ -124,7 +122,6 @@ export default function CertificatesPage() {
                   <Progress
                     value={certificate.progress}
                     className="h-2 bg-[#F3D9E2]"
-                    indicatorClassName="bg-[#8E3A59]"
                   />
                   <div className="mt-4 flex items-center gap-2 text-sm text-gray-600">
                     <CheckCircle className="h-4 w-4 text-green-500" />
@@ -170,7 +167,6 @@ export default function CertificatesPage() {
                     <Button
                       variant="outline"
                       className="flex-1 border-[#8E3A59] text-[#8E3A59] hover:bg-[#F3D9E2]"
-                      leftIcon={<Download className="mr-2 h-4 w-4" />}
                     >
                       Descargar
                     </Button>

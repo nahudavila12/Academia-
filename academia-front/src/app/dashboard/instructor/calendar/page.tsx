@@ -218,7 +218,20 @@ export default function InstructorCalendarPage() {
 }
 
 // Función para generar los días del calendario
-function generateCalendarDays(year, month) {
+interface CalendarDay {
+  date: number
+  isCurrentMonth: boolean
+  isToday: boolean
+  events: CalendarEvent[]
+}
+
+interface CalendarEvent {
+  date: Date
+  title: string
+  type: string
+}
+
+function generateCalendarDays(year: number, month: number): CalendarDay[] {
   const firstDay = new Date(year, month, 1)
   const lastDay = new Date(year, month + 1, 0)
   const daysInMonth = lastDay.getDate()
@@ -227,12 +240,12 @@ function generateCalendarDays(year, month) {
   const firstDayOfWeek = (firstDay.getDay() + 6) % 7
 
   const today = new Date()
-  const isToday = (date) =>
+  const isToday = (date: Date): boolean =>
     date.getDate() === today.getDate() &&
     date.getMonth() === today.getMonth() &&
     date.getFullYear() === today.getFullYear()
 
-  const days = []
+  const days: CalendarDay[] = []
 
   // Días del mes anterior
   const prevMonth = new Date(year, month, 0)
@@ -273,9 +286,9 @@ function generateCalendarDays(year, month) {
 }
 
 // Función para obtener eventos para una fecha específica
-function getEventsForDate(date) {
+function getEventsForDate(date: Date): CalendarEvent[] {
   // Simulación de eventos
-  const events = [
+  const events: CalendarEvent[] = [
     {
       date: new Date(date.getFullYear(), date.getMonth(), 15),
       title: "Clase de maquillaje",

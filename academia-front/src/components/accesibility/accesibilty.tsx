@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { Eye, Type, MousePointer, Volume2, Moon, Sun, Contrast, Palette, RotateCcw } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Slider } from "@/components/ui/slider"
 import { Switch } from "@/components/ui/switch"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -139,14 +138,7 @@ export default function AccessibilityControls() {
                   </div>
                   <div className="flex items-center gap-4">
                     <Type className="h-4 w-4 text-gray-500" />
-                    <Slider
-                      value={[settings.fontSize]}
-                      min={75}
-                      max={200}
-                      step={5}
-                      onValueChange={(value) => updateSetting("fontSize", value[0])}
-                      className="flex-1"
-                    />
+                   
                     <Type className="h-6 w-6 text-gray-500" />
                   </div>
                 </div>
@@ -156,13 +148,7 @@ export default function AccessibilityControls() {
                     <label className="text-sm font-medium">Altura de línea</label>
                     <span className="text-xs text-gray-500">{settings.lineHeight}%</span>
                   </div>
-                  <Slider
-                    value={[settings.lineHeight]}
-                    min={100}
-                    max={200}
-                    step={10}
-                    onValueChange={(value) => updateSetting("lineHeight", value[0])}
-                  />
+                 
                 </div>
 
                 <div>
@@ -170,13 +156,7 @@ export default function AccessibilityControls() {
                     <label className="text-sm font-medium">Espaciado entre letras</label>
                     <span className="text-xs text-gray-500">{settings.letterSpacing}px</span>
                   </div>
-                  <Slider
-                    value={[settings.letterSpacing]}
-                    min={0}
-                    max={10}
-                    step={0.5}
-                    onValueChange={(value) => updateSetting("letterSpacing", value[0])}
-                  />
+                
                 </div>
 
                 <div className="flex items-center justify-between rounded-lg border border-[#F3D9E2] p-3">
@@ -222,14 +202,7 @@ export default function AccessibilityControls() {
                   </div>
                   <div className="flex items-center gap-4">
                     <Contrast className="h-4 w-4 text-gray-500" />
-                    <Slider
-                      value={[settings.contrast]}
-                      min={75}
-                      max={150}
-                      step={5}
-                      onValueChange={(value) => updateSetting("contrast", value[0])}
-                      className="flex-1"
-                    />
+                   
                     <Contrast className="h-6 w-6 text-gray-500" />
                   </div>
                 </div>

@@ -186,7 +186,6 @@ export default function InstructorStudentsPage() {
                       <Progress
                         value={student.progress}
                         className="h-2 bg-[#F3D9E2]"
-                        indicatorClassName="bg-[#8E3A59]"
                       />
                       <span className="text-xs font-medium">{student.progress}%</span>
                     </div>
