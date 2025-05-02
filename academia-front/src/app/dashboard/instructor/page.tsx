@@ -134,7 +134,6 @@ export default function InstructorDashboard() {
                     <Progress
                       value={course.completion}
                       className="h-2 flex-1 bg-[#F3D9E2]"
-                      indicatorClassName={`bg-[${course.color}]`}
                     />
                     <span className="text-sm font-medium">{course.completion}%</span>
                   </div>

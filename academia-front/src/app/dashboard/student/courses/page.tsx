@@ -73,7 +73,8 @@ export default function StudentCoursesPage() {
                       {course.completedLessons}/{course.totalLessons} lecciones
                     </span>
                   </div>
-                  <Progress value={course.progress} className="h-2 bg-[#F3D9E2]" indicatorClassName="bg-[#8E3A59]" />
+                  <Progress value={course.progress} className="h-2 bg-[#F3D9E2]" 
+                  />
                   <div className="mt-4 flex items-center gap-2 text-sm text-gray-500">
                     <Clock className="h-4 w-4" />
                     <span>Última actividad: {course.lastActivity}</span>

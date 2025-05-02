@@ -136,7 +136,6 @@ export default function AdminDashboard() {
                   <Progress
                     value={category.percentage}
                     className="h-2 bg-[#F3D9E2]"
-                    indicatorClassName={`bg-[${category.color}]`}
                   />
                   <div className="flex items-center justify-between text-xs text-gray-500">
                     <span>{category.percentage}% del total</span>
@@ -169,7 +168,6 @@ export default function AdminDashboard() {
                   <Progress
                     value={type.percentage}
                     className="h-2 bg-[#F3D9E2]"
-                    indicatorClassName={`bg-[${type.color}]`}
                   />
                   <div className="flex items-center justify-between text-xs text-gray-500">
                     <span>{type.percentage}% del total</span>

@@ -50,42 +50,28 @@ export default function MaterialsPage() {
         {/* Todos los materiales */}
         <TabsContent value="all" className="mt-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {materials.map((material, index) => (
-              <MaterialCard key={index} material={material} />
-            ))}
+         
           </div>
         </TabsContent>
 
         {/* Videos */}
         <TabsContent value="videos" className="mt-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {materials
-              .filter((material) => material.type === "video")
-              .map((material, index) => (
-                <MaterialCard key={index} material={material} />
-              ))}
+         
           </div>
         </TabsContent>
 
         {/* Documentos */}
         <TabsContent value="documents" className="mt-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {materials
-              .filter((material) => material.type === "document" || material.type === "pdf")
-              .map((material, index) => (
-                <MaterialCard key={index} material={material} />
-              ))}
+           
           </div>
         </TabsContent>
 
         {/* Cuestionarios */}
         <TabsContent value="quizzes" className="mt-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {materials
-              .filter((material) => material.type === "quiz")
-              .map((material, index) => (
-                <MaterialCard key={index} material={material} />
-              ))}
+      
           </div>
         </TabsContent>
       </Tabs>
@@ -149,16 +135,26 @@ export default function MaterialsPage() {
       <div>
         <h2 className="mb-4 text-xl font-bold text-[#8E3A59]">Recomendados para ti</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {recommendedMaterials.map((material, index) => (
-            <MaterialCard key={index} material={material} />
-          ))}
+        
         </div>
       </div>
     </div>
   )
 }
 
-function MaterialCard({ material }) {
+interface Material {
+  title: string;
+  thumbnail: string;
+  type: "video" | "document" | "pdf" | "quiz";
+  course: string;
+  rating?: number;
+  reviews?: number;
+  duration?: string;
+  pages?: number;
+  questions?: number;
+}
+
+function MaterialCard({ material }: { material: Material }) {
   return (
     <Card className="overflow-hidden border-[#F3D9E2]">
       <div className="relative aspect-video">
@@ -207,7 +203,7 @@ function MaterialCard({ material }) {
               .map((_, i) => (
                 <Star
                   key={i}
-                  className={`h-3.5 w-3.5 ${i < material.rating ? "fill-[#D4AF37] text-[#D4AF37]" : "text-gray-300"}`}
+                  className={`h-3.5 w-3.5 ${i < (material.rating ?? 0) ? "fill-[#D4AF37] text-[#D4AF37]" : "text-gray-300"}`}
                 />
               ))}
             <span className="ml-1 text-xs text-gray-500">({material.reviews})</span>
@@ -228,13 +224,23 @@ function MaterialCard({ material }) {
         </div>
       </CardContent>
       <CardFooter className="p-3 pt-0">
-        <Button
-          className="w-full bg-[#8E3A59] hover:bg-[#7A3049] text-white"
-          leftIcon={
-            material.type === "video" ? <Play className="mr-2 h-4 w-4" /> : <Download className="mr-2 h-4 w-4" />
-          }
-        >
-          {material.type === "video" ? "Ver video" : material.type === "quiz" ? "Iniciar" : "Descargar"}
+        <Button className="w-full bg-[#8E3A59] hover:bg-[#7A3049] text-white">
+          {material.type === "video" ? (
+            <>
+              <Play className="mr-2 h-4 w-4" />
+              Ver video
+            </>
+          ) : material.type === "quiz" ? (
+            <>
+              <Download className="mr-2 h-4 w-4" />
+              Iniciar
+            </>
+          ) : (
+            <>
+              <Download className="mr-2 h-4 w-4" />
+              Descargar
+            </>
+          )}
         </Button>
       </CardFooter>
     </Card>
@@ -245,7 +251,7 @@ const materials = [
   {
     title: "Tutorial: Base perfecta para piel grasa",
     thumbnail: "/images/video.png", // Video
-    type: "video",
+    type: "video" as "video",
     course: "Maquillaje Profesional",
     rating: 5,
     reviews: 28,
@@ -254,7 +260,7 @@ const materials = [
   {
     title: "Guía de colorimetría personal",
     thumbnail: "/images/pdf.png", // PDF
-    type: "pdf",
+    type: "pdf" as "pdf",
     course: "Estilismo y Asesoría de Imagen",
     rating: 4,
     reviews: 15,
@@ -263,7 +269,7 @@ const materials = [
   {
     title: "Técnicas de degradado para uñas",
     thumbnail: "/images/video.png", // Video
-    type: "video",
+    type: "video" as "video",
     course: "Nail Art Profesional",
     rating: 5,
     reviews: 32,
@@ -272,7 +278,7 @@ const materials = [
   {
     title: "Plantillas de diseño para maquillaje",
     thumbnail: "/images/pdf.png", // PDF
-    type: "document",
+    type: "document" as "document",
     course: "Maquillaje Profesional",
     rating: 4,
     reviews: 18,
@@ -281,7 +287,7 @@ const materials = [
   {
     title: "Evaluación: Conocimientos básicos de skincare",
     thumbnail: "/images/pdf.png", // PDF
-    type: "quiz",
+    type: "quiz" as "quiz",
     course: "Skincare Avanzado",
     rating: 4,
     reviews: 22,
@@ -290,7 +296,7 @@ const materials = [
   {
     title: "Masterclass: Maquillaje para eventos",
     thumbnail: "/images/video.png", // Video
-    type: "video",
+    type: "video" as "video",
     course: "Maquillaje Profesional",
     rating: 5,
     reviews: 45,
@@ -299,7 +305,7 @@ const materials = [
   {
     title: "Glosario de términos de belleza",
     thumbnail: "/images/pdf.png", // PDF
-    type: "pdf",
+    type: "pdf" as "pdf",
     course: "Fundamentos de Estética",
     rating: 4,
     reviews: 12,
@@ -327,14 +333,14 @@ const recentlyViewed = [
   {
     title: "Guía de colorimetría personal",
     thumbnail: "/images/pdf.png", // PDF
-    type: "pdf",
+    type: "pdf" as "pdf",
     course: "Estilismo y Asesoría de Imagen",
     lastViewed: "ayer",
   },
   {
     title: "Evaluación: Conocimientos básicos de skincare",
     thumbnail: "/images/pdf.png", // PDF
-    type: "quiz",
+    type: "quiz" as "quiz",
     course: "Skincare Avanzado",
     lastViewed: "3 días",
   },
@@ -378,7 +384,7 @@ const recommendedMaterials = [
   {
     title: "Evaluación: Técnicas de maquillaje avanzado",
     thumbnail: "/images/pdf.png", // PDF
-    type: "quiz",
+    type: "quiz" as "quiz",
     course: "Maquillaje Profesional",
     rating: 4,
     reviews: 19,
