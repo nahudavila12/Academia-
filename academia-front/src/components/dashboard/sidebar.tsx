@@ -126,7 +126,7 @@ export default function DashboardSidebar({ isOpen, toggleSidebar }: DashboardSid
       <div className="flex h-16 items-center justify-between border-b border-[#F3D9E2] px-4">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/images/logo.png?height=40&width=40" width={40} height={40} alt="Logo" className="rounded-full" />
-          <span className="font-serif text-xl font-bold text-[#8E3A59]">BeautyAcademy</span>
+          <span className="font-serif text-xl font-bold text-[#8E3A59]">Gisela Echavarria</span>
         </Link>
       </div>
       <div className="flex flex-col gap-6 p-4">

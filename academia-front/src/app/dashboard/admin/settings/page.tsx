@@ -54,8 +54,8 @@ export default function AdminSettingsPage() {
                   <Label htmlFor="platform-name">Nombre de la plataforma</Label>
                   <Input
                     id="platform-name"
-                    placeholder="BeautyAcademy"
-                    defaultValue="BeautyAcademy"
+                    placeholder="Gisela Echavarria"
+                    defaultValue="Gisela Echavarria"
                     className="border-[#F3D9E2] focus-visible:ring-[#8E3A59]"
                   />
                 </div>

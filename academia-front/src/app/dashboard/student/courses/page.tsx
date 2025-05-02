@@ -193,7 +193,7 @@ const inProgressCourses = [
   {
     title: "Maquillaje Profesional Avanzado",
     instructor: "Laura Martínez",
-    image: "/placeholder.svg?height=180&width=320",
+    image: "/images/maquillajepro.jpg?height=180&width=320",
     progress: 65,
     completedLessons: 13,
     totalLessons: 20,
@@ -203,7 +203,7 @@ const inProgressCourses = [
   {
     title: "Estilismo y Asesoría de Imagen",
     instructor: "Carolina Gómez",
-    image: "/placeholder.svg?height=180&width=320",
+    image: "/images/estilismo.jpg?height=180&width=320",
     progress: 30,
     completedLessons: 6,
     totalLessons: 20,
@@ -213,7 +213,7 @@ const inProgressCourses = [
   {
     title: "Técnicas de Nail Art",
     instructor: "Sofía López",
-    image: "/placeholder.svg?height=180&width=320",
+    image: "/images/nails.jpg?height=180&width=320",
     progress: 45,
     completedLessons: 9,
     totalLessons: 20,
@@ -226,7 +226,7 @@ const completedCourses = [
   {
     title: "Skincare Básico",
     instructor: "Ana Rodríguez",
-    image: "/placeholder.svg?height=180&width=320",
+    image: "/images/skincare.jpg?height=180&width=320",
     rating: 5,
     completionDate: "15/04/2023",
     category: "Skincare",
@@ -237,7 +237,7 @@ const savedCourses = [
   {
     title: "Colorimetría Personal",
     instructor: "María Fernández",
-    image: "/placeholder.svg?height=180&width=320",
+    image: "/images/color.jpg?height=180&width=320",
     lessons: 15,
     duration: "8 semanas",
     rating: 4.8,
@@ -247,7 +247,7 @@ const savedCourses = [
   {
     title: "Maquillaje Editorial",
     instructor: "Laura Martínez",
-    image: "/placeholder.svg?height=180&width=320",
+    image: "/images/maquillaje.jpg?height=180&width=320",
     lessons: 18,
     duration: "10 semanas",
     rating: 4.9,

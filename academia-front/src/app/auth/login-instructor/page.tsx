@@ -45,7 +45,7 @@ export default function InstructorLoginPage() {
                   alt="Logo"
                   className="rounded-full"
                 />
-                <span className="font-serif text-xl font-bold text-[#8E3A59]">BeautyAcademy</span>
+                <span className="font-serif text-xl font-bold text-[#8E3A59]">Gisela Echavarria</span>
               </Link>
               <h1 className="mt-8 font-serif text-2xl font-bold text-[#8E3A59] md:text-3xl">Portal de Instructores</h1>
               <p className="mt-2 text-gray-600">
@@ -130,7 +130,7 @@ export default function InstructorLoginPage() {
               <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                 <blockquote className="space-y-2">
                   <p className="text-lg font-medium italic">
-                    "Enseñar en BeautyAcademy me ha permitido compartir mi pasión con estudiantes de todo el mundo y
+                    "Enseñar en Gisela Echavarria me ha permitido compartir mi pasión con estudiantes de todo el mundo y
                     crear una comunidad vibrante de profesionales."
                   </p>
                   <footer className="text-sm">— Carlos Mendoza, Instructor Senior</footer>

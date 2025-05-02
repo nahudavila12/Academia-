@@ -244,7 +244,7 @@ function MaterialCard({ material }) {
 const materials = [
   {
     title: "Tutorial: Base perfecta para piel grasa",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/video.png", // Video
     type: "video",
     course: "Maquillaje Profesional",
     rating: 5,
@@ -253,7 +253,7 @@ const materials = [
   },
   {
     title: "Guía de colorimetría personal",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/pdf.png", // PDF
     type: "pdf",
     course: "Estilismo y Asesoría de Imagen",
     rating: 4,
@@ -262,7 +262,7 @@ const materials = [
   },
   {
     title: "Técnicas de degradado para uñas",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/video.png", // Video
     type: "video",
     course: "Nail Art Profesional",
     rating: 5,
@@ -271,7 +271,7 @@ const materials = [
   },
   {
     title: "Plantillas de diseño para maquillaje",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/pdf.png", // PDF
     type: "document",
     course: "Maquillaje Profesional",
     rating: 4,
@@ -280,7 +280,7 @@ const materials = [
   },
   {
     title: "Evaluación: Conocimientos básicos de skincare",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/pdf.png", // PDF
     type: "quiz",
     course: "Skincare Avanzado",
     rating: 4,
@@ -289,7 +289,7 @@ const materials = [
   },
   {
     title: "Masterclass: Maquillaje para eventos",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/video.png", // Video
     type: "video",
     course: "Maquillaje Profesional",
     rating: 5,
@@ -298,7 +298,7 @@ const materials = [
   },
   {
     title: "Glosario de términos de belleza",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/pdf.png", // PDF
     type: "pdf",
     course: "Fundamentos de Estética",
     rating: 4,
@@ -307,7 +307,7 @@ const materials = [
   },
   {
     title: "Técnicas avanzadas de contouring",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/video.png", // Video
     type: "video",
     course: "Maquillaje Profesional",
     rating: 5,
@@ -319,28 +319,28 @@ const materials = [
 const recentlyViewed = [
   {
     title: "Tutorial: Base perfecta para piel grasa",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/video.png", // Video
     type: "video",
     course: "Maquillaje Profesional",
     lastViewed: "2 horas",
   },
   {
     title: "Guía de colorimetría personal",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/pdf.png", // PDF
     type: "pdf",
     course: "Estilismo y Asesoría de Imagen",
     lastViewed: "ayer",
   },
   {
     title: "Evaluación: Conocimientos básicos de skincare",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/pdf.png", // PDF
     type: "quiz",
     course: "Skincare Avanzado",
     lastViewed: "3 días",
   },
   {
     title: "Masterclass: Maquillaje para eventos",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/video.png", // Video
     type: "video",
     course: "Maquillaje Profesional",
     lastViewed: "1 semana",
@@ -350,7 +350,7 @@ const recentlyViewed = [
 const recommendedMaterials = [
   {
     title: "Técnicas avanzadas de contouring",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/video.png", // Video
     type: "video",
     course: "Maquillaje Profesional",
     rating: 5,
@@ -359,7 +359,7 @@ const recommendedMaterials = [
   },
   {
     title: "Tendencias de maquillaje 2023",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/pdf.png", // PDF
     type: "pdf",
     course: "Maquillaje Profesional",
     rating: 4,
@@ -368,7 +368,7 @@ const recommendedMaterials = [
   },
   {
     title: "Masterclass: Automaquillaje en 15 minutos",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/video.png", // Video
     type: "video",
     course: "Maquillaje Profesional",
     rating: 5,
@@ -377,7 +377,7 @@ const recommendedMaterials = [
   },
   {
     title: "Evaluación: Técnicas de maquillaje avanzado",
-    thumbnail: "/placeholder.svg?height=180&width=320",
+    thumbnail: "/images/pdf.png", // PDF
     type: "quiz",
     course: "Maquillaje Profesional",
     rating: 4,
@@ -385,3 +385,4 @@ const recommendedMaterials = [
     questions: 20,
   },
 ]
+

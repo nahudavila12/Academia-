@@ -47,13 +47,8 @@ export default function DashboardHeader({ toggleSidebar }: DashboardHeaderProps)
       </div>
 
       <div className="flex items-center gap-2">
-        <NotificationPanel />
 
-        <Button variant="ghost" size="icon" className="text-gray-500 hover:text-[#8E3A59]">
-          <MessageSquare className="h-5 w-5" />
-          <span className="sr-only">Mensajes</span>
-          <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-[#8E3A59]"></span>
-        </Button>
+
 
         <Link href="/dashboard/student/focus" className="text-gray-500 hover:text-[#8E3A59]">
           <Button variant="ghost" size="sm">
@@ -76,6 +71,19 @@ export default function DashboardHeader({ toggleSidebar }: DashboardHeaderProps)
             Accesibilidad
           </Button>
         </Link>
+        <NotificationPanel />
+
+
+       <Link
+  href={(true /* Replace with actual logic to determine if the user is a student */) ? "/dashboard/student/messages" : "/dashboard/instructor/messages"}
+  className="text-gray-500 hover:text-[#8E3A59]"
+>
+  <Button variant="ghost" size="icon" className="text-gray-500 hover:text-[#8E3A59]">
+    <MessageSquare className="h-5 w-5" />
+    <span className="sr-only">Mensajes</span>
+    <span className="absolute right-1 top-1 h-2 w-2 rounded-full bg-[#8E3A59]"></span>
+  </Button>
+</Link>
 
         <DropdownMenu>
           <DropdownMenuTrigger asChild>

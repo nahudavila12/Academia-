@@ -96,7 +96,7 @@ export default function TalleresPage() {
       imagen: "/placeholder.svg?height=250&width=400",
       fecha: "25 de Julio, 2025",
       hora: "9:00 AM - 1:00 PM",
-      ubicacion: "Centro de Formación Beauty Pro, Sevilla",
+      ubicacion: "Centro de Formación Gisela Echavarria Pro, Sevilla",
       precio: 109.99,
       plazas: 15,
       plazasDisponibles: 7,
@@ -349,7 +349,7 @@ export default function TalleresPage() {
         {/* Footer */}
         <footer className="py-8 bg-white border-t">
           <div className="container mx-auto px-4 text-center">
-            <p className="text-gray-500">© 2025 BeautyAcademy. Todos los derechos reservados.</p>
+            <p className="text-gray-500"> 2025 Gisela Echavarria.</p>
           </div>
         </footer>   
       </main>

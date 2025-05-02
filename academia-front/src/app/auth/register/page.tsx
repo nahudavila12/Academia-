@@ -79,7 +79,7 @@ export default function RegisterPage() {
                   alt="Logo"
                   className="rounded-full"
                 />
-                <span className="font-serif text-xl font-bold text-[#8E3A59]">BeautyAcademy</span>
+                <span className="font-serif text-xl font-bold text-[#8E3A59]">Gisela Echavarria</span>
               </Link>
               <h1 className="mt-8 font-serif text-2xl font-bold text-[#8E3A59] md:text-3xl">
                 {step === 1 ? "Crea tu cuenta" : "Completa tu perfil"}

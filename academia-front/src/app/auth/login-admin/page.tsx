@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
                   alt="Logo"
                   className="rounded-full"
                 />
-                <span className="font-serif text-xl font-bold text-[#8E3A59]">BeautyAcademy</span>
+                <span className="font-serif text-xl font-bold text-[#8E3A59]">Gisela Echavarria</span>
               </Link>
               <h1 className="mt-8 font-serif text-2xl font-bold text-[#8E3A59] md:text-3xl">Panel de Administración</h1>
               <p className="mt-2 text-gray-600">Acceso restringido para administradores de la plataforma.</p>
@@ -131,7 +131,7 @@ export default function AdminLoginPage() {
                 <ShieldAlert className="h-16 w-16 mb-4" />
                 <h2 className="text-2xl font-bold mb-4 text-center">Área Restringida</h2>
                 <p className="text-center max-w-xs">
-                  Este portal es exclusivo para administradores autorizados de BeautyAcademy. El acceso no autorizado
+                  Este portal es exclusivo para administradores autorizados de Gisela Echavarria. El acceso no autorizado
                   está prohibido y puede resultar en acciones legales.
                 </p>
                 <div className="mt-8 p-4 border border-white/30 rounded-lg bg-white/10 w-full max-w-xs">

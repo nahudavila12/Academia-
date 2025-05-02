@@ -13,13 +13,12 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/placeholder.svg?height=40&width=40"
+                src="/images/logo.png?height=40&width=40"
                 width={40}
                 height={40}
                 alt="Logo"
                 className="rounded-full"
               />
-              <span className="font-serif text-xl font-bold text-[#8E3A59]">BeautyAcademy</span>
             </Link>
             <p className="text-sm">Transformando vidas a través de la belleza y el empoderamiento femenino.</p>
             <div className="flex gap-4">
@@ -166,7 +165,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-[#F3D9E2] pt-8">
           <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
-            <p className="text-xs">&copy; {new Date().getFullYear()} BeautyAcademy. Todos los derechos reservados.</p>
+            <p className="text-xs">&copy; {new Date().getFullYear()} Gisela Echavarria. Todos los derechos reservados.</p>
             <div className="flex gap-4 text-xs">
               <Link href="#" className="hover:text-[#8E3A59]">
                 Términos de servicio

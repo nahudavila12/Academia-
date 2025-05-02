@@ -17,7 +17,7 @@ export default function Header() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2">
           <Image src="/images/logo.png?height=40&width=40" width={40} height={40} alt="Logo" className="rounded-full" />
-          <span className="font-serif text-xl font-bold text-[#8E3A59]">BeautyAcademy</span>
+          <span className="font-serif text-xl font-bold text-[#8E3A59]">Gisela Echavarria</span>
         </Link>
 
         {isMobile ? (

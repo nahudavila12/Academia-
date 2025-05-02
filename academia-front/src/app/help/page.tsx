@@ -10,9 +10,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 const faqs = [
   {
-    question: "What is BeautyAcademy?",
+    question: "What is Gisela Echavarria Academy?",
     answer:
-      "BeautyAcademy is an online platform that offers courses and resources for beauty professionals and enthusiasts.",
+      "Gisela Echavarria is an online platform that offers courses and resources for beauty professionals and enthusiasts.",
   },
   {
     question: "How do I enroll in a course?",
@@ -27,7 +27,7 @@ const faqs = [
 const guides = [
   {
     title: "Getting Started",
-    description: "Learn the basics of using BeautyAcademy.",
+    description: "Learn the basics of using Gisela Echavarria.",
     icon: <Book className="h-6 w-6 text-[#8E3A59]" />,
     topics: ["Account setup", "Navigating the dashboard", "Finding courses"],
   },
@@ -58,7 +58,7 @@ export default function HelpPage() {
               alt="Logo"
               className="rounded-full"
             />
-            <span className="font-serif text-xl font-bold text-[#8E3A59]">BeautyAcademy</span>
+            <span className="font-serif text-xl font-bold text-[#8E3A59]">Gisela Echavarria</span>
           </Link>
           <nav className="flex items-center gap-6">
             <Link href="/" className="text-sm font-medium text-gray-600 hover:text-[#8E3A59]">

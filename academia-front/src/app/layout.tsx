@@ -8,7 +8,7 @@ import LiveSupport from "@/components/live-support/live-support"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Beauty Academy - Plataforma Educativa de Belleza",
+  title: "Gisela Echavarria - Plataforma Educativa de Belleza",
   description:
     "Aprende las últimas técnicas y tendencias en maquillaje, peluquería y estética con los mejores profesionales.",
 }
