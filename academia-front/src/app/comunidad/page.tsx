@@ -187,7 +187,7 @@ export default function CommunityPage() {
             <Button size="lg" className="bg-pink-600 hover:bg-pink-700">
               Unirse a la comunidad
             </Button>
-            <Button variant="outline" size="lg">
+            <Button variant="outline" size="lg" className="border-white text-black hover:bg-white/10">
               Explorar foros
             </Button>
           </div>

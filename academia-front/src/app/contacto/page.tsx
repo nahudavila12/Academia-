@@ -1,3 +1,4 @@
+"use client"
 import { MapPin, Phone, Mail, Clock, Send, MessageSquare, Video, Users } from "lucide-react"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
@@ -9,6 +10,10 @@ import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import dynamic from "next/dynamic"
+import "leaflet/dist/leaflet.css"
+
+const Map = dynamic(() => import("@/components/MapContact"), { ssr: false })
 
 // Datos simulados
 const locations = [
@@ -266,12 +271,8 @@ export default function ContactPage() {
       {/* Map Section */}
       <section className="py-8 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="aspect-[16/9] w-full rounded-xl overflow-hidden border border-gray-200 shadow-sm">
-            <img
-              src="/placeholder.svg?height=800&width=1600&text=Mapa"
-              alt="Mapa de ubicaciones"
-              className="w-full h-full object-cover"
-            />
+          <div className="w-full rounded-xl overflow-hidden border border-gray-200 shadow-sm aspect-[16/9] md:aspect-auto md:h-96">
+            <Map />
           </div>
         </div>
       </section>
